@@ -1,0 +1,363 @@
+/*!
+ * Start Bootstrap - Heroic Features (https://startbootstrap.com/templates/heroic-features)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-heroic-features/blob/master/LICENSE)
+ */
+body {
+	padding-top: 56px;
+	background-color: #f8f9fa !important;
+}
+
+#navegador {
+	min-height: 56px;
+	background-color: #fff;
+}
+
+#navegador .navbar-toggler {
+	font-size: 80%;
+	padding: 0.75rem;
+	color: black;
+	border: 1px solid black;
+}
+
+#mainNav .navbar-toggler:focus {
+	outline: none;
+}
+
+#mainNav .navbar-brand {
+	color: #161616;
+	font-weight: 700;
+	padding: .9rem 0;
+}
+
+#mainNavAdmin .navbar-brand {
+	color: #161616;
+	font-weight: 700;
+	padding: .9rem 0;
+}
+
+#mainNav .navbar-nav .nav-item:hover {
+	color: fade(white, 80%);
+	outline: none;
+	background-color: transparent;
+}
+
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus
+	{
+	outline: none;
+	background-color: transparent;
+}
+
+@media ( min-width : 992px) {
+	#mainNav {
+		padding-top: 0;
+		padding-bottom: 0;
+		border-bottom: none;
+		background-color: transparent;
+		-webkit-transition: background-color 0.3s ease-in-out;
+		transition: background-color 0.3s ease-in-out;
+	}
+	#mainNav .navbar-brand {
+		padding: .5rem 0;
+		color: rgba(255, 255, 255, 0.7);
+	}
+	#mainNav .nav-link {
+		-webkit-transition: none;
+		transition: none;
+		padding: 2rem 1.5rem;
+		color: rgba(255, 255, 255, 0.5);
+	}
+	#mainNav .nav-link:hover {
+		color: rgba(255, 255, 255, 0.75);
+	}
+	#mainNav .nav-link:active {
+		color: white;
+	}
+	#mainNav.navbar-shrink {
+		background-color: #fff;
+	}
+	#mainNav.navbar-shrink .navbar-brand {
+		color: #161616;
+	}
+	#mainNav.navbar-shrink .nav-link {
+		color: #161616;
+		padding: 1.5rem 1.5rem 1.25rem;
+		border-bottom: 0.25rem solid transparent;
+	}
+	#mainNav.navbar-shrink .nav-link:hover {
+		color: #64a19d;
+	}
+	#mainNav.navbar-shrink .nav-link:active {
+		color: #467370;
+	}
+	#mainNav.navbar-shrink .nav-link.active {
+		color: #64a19d;
+		outline: none;
+		border-bottom: 0.25rem solid #64a19d;
+	}
+}
+
+.portada {
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 35rem;
+	padding: 15rem 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+}
+
+.portada h1 {
+	font-family: 'Itim', cursive;
+	font-size: 2.5rem;
+	line-height: 2.5rem;
+	letter-spacing: 0.8rem;
+	background: -webkit-linear-gradient(rgba(255, 255, 255, 0.15),
+		rgba(255, 255, 255, 1));
+	-webkit-text-fill-color: transparent;
+}
+
+.portada h2 {
+	max-width: 20rem;
+	font-size: 1rem;
+	color: #fff;
+}
+
+@media ( min-width : 768px) {
+	.portada h1 {
+		font-size: 4rem;
+		line-height: 4rem;
+	}
+}
+
+@media ( min-width : 992px) {
+	.portada {
+		height: 100vh;
+		padding: 0;
+	}
+	.portada h1 {
+		font-size: 6.5rem;
+		line-height: 6.5rem;
+		letter-spacing: 0.8rem;
+	}
+	.portada h2 {
+		max-width: 30rem;
+		font-size: 1.25rem;
+	}
+}
+
+.btn {
+	-webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1)
+		!important;
+	box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+	padding: 1.25rem 2rem;
+	font-family: 'Montserrat', sans-serif;;
+	font-size: 80%;
+	text-transform: uppercase;
+	letter-spacing: .15rem;
+	border: 0;
+}
+
+.btn-primary {
+	background-color: black;
+}
+
+.btn-primary:focus {
+	background-color: #3d3d3d;
+	color: white !important;
+}
+
+.btn-primary:hover {
+	background-color: #3d3d3d;
+	color: white !important;
+}
+
+.btn-primary:active {
+	background-color: #2b2b2b !important;
+	color: white !important;
+}
+
+.btn2 {
+	-webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1)
+		!important;
+	box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+	padding: 0.7rem 1.1rem;
+	font-family: 'Montserrat', sans-serif;;
+	font-size: 50%;
+	text-transform: uppercase;
+	letter-spacing: .15rem;
+	border: 0;
+}
+
+.nosotros-section p {
+	margin-bottom: 5rem;
+}
+
+.nosotros-section {
+	padding: 2rem 0;
+}
+
+.nosotros-section .featured-text {
+	padding: 2rem;
+}
+
+@media ( min-width : 992px) {
+	.nosotros-section .featured-text {
+		padding: 0 0 0 2rem;
+		border-left: 0.5rem solid black;
+	}
+}
+
+.nosotros-section .seccion-text {
+	padding: 3rem;
+	font-size: 90%;
+}
+
+@media ( min-width : 992px) {
+	.nosotros-section .seccion-text {
+		padding: 5rem;
+	}
+	.nosotros-section .seccion-text hr {
+		border-color: white;
+		border-width: .25rem;
+		width: 40%;
+	}
+}
+
+.contacto-section {
+	padding: 5rem 0 0;
+}
+
+.contacto-section .card h4 {
+	font-size: 0.8rem;
+	font-family: 'Montserrat', sans-serif;;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+}
+
+.contacto-section .card hr {
+	border-color: black;
+	border-width: 0.25rem;
+	width: 3rem;
+}
+
+.contacto-section {
+	margin-top: 5rem;
+}
+
+.contacto-section .social a {
+	text-align: center;
+	height: 3rem;
+	width: 3rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 100%;
+	line-height: 3rem;
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.contacto-section .social a:hover {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.contacto-section .social a:active {
+	color: #fff;
+}
+
+a {
+	color: black;
+}
+
+a i {
+	font-size: 2rem;
+}
+
+a:focus {
+	color: #3d3d3d;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #2b2b2b !important;
+}
+
+.bg-black {
+	background-color: black !important;
+}
+
+.bg-primary {
+	background-color: #64a19d !important;
+}
+
+.text-primary {
+	color: black !important;
+}
+
+footer {
+	padding: 5rem 0;
+}
+
+.logo {
+	width: 14rem;
+}
+
+.table-responsive {
+	padding: 10rem 0 5rem 0;
+}
+
+.tabla-sin {
+	padding: 3rem 10rem 1rem 10rem;
+}
+
+.tabla-pequena {
+	padding: 3rem 10rem 1rem 40rem;
+}
+
+.botonera {
+	padding: 0 10rem 1rem 40rem;
+}
+
+.mb-4, .my-4 {
+	margin-bottom: 1.5rem !important;
+	padding-top: 40px;
+}
+
+.align-items-end {
+	-ms-flex-align: end !important;
+	align-items: flex-end !important;
+	padding-top: 140px;
+}
+
+.breadcrumb {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: .75rem 1rem;
+	margin-bottom: 1rem;
+	list-style: none;
+	background-color: #e9ecef;
+	border-radius: .25rem;
+	margin-top: 5rem;
+}
+
+.carrousel {
+	padding-top: 70px;
+}
+
+.mamma {
+	padding-bottom: 70px;
+}
+
+.ingresar {
+	margin-top: 130px;
+}
+
+.pizzas {
+	margin: 50px;
+}
+
+.user {
+	margin-top: 62px;
+}

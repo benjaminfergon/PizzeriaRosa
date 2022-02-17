@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>PIZZERIA ROSA</title>
+
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:include="administrador/template_admin.html::header"></div>
+
+	<!-- Page Content -->
+	<div class="container">
+
+
+		<!-- Page Heading/Breadcrumbs -->
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a th:href="@{/administrador}">Home</a></li>
+			<li class="breadcrumb-item active">Ver mesas</li>
+		</ol>
+		<h2>Usuarios</h2>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Usuario</th>
+					<th scope="col">Direccion</th>
+					<th scope="col">Nº Mesas Reservadas</th>
+					<th scope="col">Fecha Reserva</th>
+					<th scope="col">Hora Reserva</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="mesa:${mesas}">
+					<td th:text="${mesa.usuario.nombre}"></td>
+					<td th:text="${mesa.usuario.direccion}"></td>
+					<td th:text="${mesa.cantidad}"></td>
+					<td th:text="${mesa.fechaReserva}"></td>
+					<td th:text="${mesa.horaReserva}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- /.container -->
+
+	<!-- Footer -->
+	<div th:include="administrador/template_admin.html::footer"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

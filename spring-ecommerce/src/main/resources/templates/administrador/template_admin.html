@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>PIZZERIA ROSA_ADMIN</title>
+
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{css/heroic-features.css}" rel="stylesheet">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Itim|Montserrat&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/d4aec25a22.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container">
+				<a class="navbar-brand" th:href="@{/administrador}">Pizzería
+					Rosa_Admin</a>
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> ADMIN </a>
+
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" th:href="@{/productos}">Productos</a> <a
+									class="dropdown-item" th:href="@{/administrador/usuarios}">Usuarios</a>
+								<a class="dropdown-item" th:href="@{/administrador/ordenes}">Ordenes</a>
+								<a class="dropdown-item" th:href="@{/empleados}">Empleados</a> <a
+									class="dropdown-item" th:href="@{/administrador/mesas}">Mesas
+									Reservadas</a> <a class="dropdown-item"
+									th:href="@{/usuario/cerrar}">Salir</a>
+							</div></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="alert alert-success" th:if="${success != null}"
+			th:text="${success}"></div>
+		<div class="alert alert-danger" th:if="${error != null}"
+			th:text="${error}"></div>
+		<div class="alert alert-warning" th:if="${warning != null}"
+			th:text="${warning}"></div>
+		<div class="alert alert-info" th:if="${info != null}"
+			th:text="${info}"></div>
+
+	</div>
+
+
+
+	<div th:fragment="footer">
+		<footer class="py-5 bg-dark">
+
+			<div class="">
+				<p class="m-0 text-center text-white">
+					Copyright &copy; Pizzería Rosa. Realizada por: <a
+						class="m-0 text-center text-white"
+						href="https://www.linkedin.com/in/benjam%C3%ADn-fern%C3%A1ndez-gonz%C3%A1lez-64a6a2147">Benjamín
+						Fernández González</a>
+				</p>
+			</div>
+			<!-- /.container -->
+		</footer>
+
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Bootstrap JS -->
+	<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/jquery-ui.min.js}"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

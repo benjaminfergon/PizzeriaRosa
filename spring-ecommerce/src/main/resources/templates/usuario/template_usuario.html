@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Spring eCommerce</title>
+
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{css/heroic-features.css}" rel="stylesheet">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Itim|Montserrat&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/d4aec25a22.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<!-- <header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+			<a class="navbar-brand js-scroll-trigger" th:href="@{/}"> <img
+				class="img-fluid logo" th:src="@{/imagenes/logo.png}" alt=""
+				style="width: 12rem;"></a>
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="navbar-brand"
+						th:href="@{/listar}">Productos</a></li>
+				</ul>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="navbar-brand"
+						th:href="@{/usuario/login}">Login</a></li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>-->
+
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+			id="navegador" style="background-color: #B984;">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" th:href="@{/}"> <img
+					class="img-fluid logo" th:src="@{/imagenes/logo.png}" alt=""
+					style="width: 12rem;"></a>
+				<button class="navbar-toggler navbar-toggler-right" type="button"
+					data-toggle="collapse" data-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					Menú <i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							th:href="@{/usuario/verProductosDetalle}">Nuesta Carta</a></li>
+
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							th:href="@{/usuario/login}">Login</a></li>
+					</ul>
+				</div>
+
+				<div class="alert alert-success user" th:if="${success != null}"
+					th:text="${success}"></div>
+				<div class="alert alert-danger user" th:if="${error != null}"
+					th:text="${error}"></div>
+				<div class="alert alert-warning user" th:if="${warning != null}"
+					th:text="${warning}"></div>
+				<div class="alert alert-info user" th:if="${info != null}"
+					th:text="${info}"></div>
+
+			</div>
+		</nav>
+	</header>
+
+
+
+
+	<!-- Navigation -->
+	<div th:fragment="header-user">
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+			id="navegador" style="background-color: #B984;">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" th:href="@{/}"> <img
+					class="img-fluid logo" th:src="@{/imagenes/logo.png}" alt=""
+					style="width: 12rem;"></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							th:href="@{/usuario/verProductos}" role="button"> Nuesta
+								Carta </a></li>
+
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							th:href="@{/mesas}" role="button">Reservar mesa</a></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> USER </a>
+
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" th:href="@{/usuario/compras}">Compras</a>
+								<a class="dropdown-item" th:href="@{/getCart}">Carrito</a> <a
+									class="dropdown-item" th:href="@{/usuario/cerrar}">Salir</a>
+							</div></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="alert alert-success user" th:if="${success != null}"
+			th:text="${success}"></div>
+		<div class="alert alert-danger user" th:if="${error != null}"
+			th:text="${error}"></div>
+		<div class="alert alert-warning user" th:if="${warning != null}"
+			th:text="${warning}"></div>
+		<div class="alert alert-info user" th:if="${info != null}"
+			th:text="${info}"></div>
+
+	</div>
+
+
+	<footer th:fragment="footer" class="container">
+		<section class="contacto contacto-section navbar-light"
+			style="background-color: #B984;">
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-md-4 mb-3 mb-md-0">
+						<div class="card py-4 h-100">
+							<div class="card-body text-center">
+								<i class="fas fa-map-marked-alt text-primary mb-2"></i>
+								<h4 class="text-uppercase m-0">Redes Sociales</h4>
+								<hr class="my-4">
+								<a href="https://www.instagram.com/"> <i
+									class="fab fa-instagram"></i>
+								</a> <a href="https://www.facebook.com/" target="blank" class="mx-2">
+									<i class="fab fa-facebook-f"></i>
+								</a> <a href="https://twitter.com/" target="blank" class="mx-2">
+									<i class="fab fa-twitter"></i>
+								</a> <a href="https://github.com/" target="blank" class="mx-2">
+									<i class="fab fa-github"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-3 mb-md-0">
+						<div class="card py-4 h-100">
+							<div class="card-body text-center">
+								<i class="fas fa-mobile-alt text-primary mb-2"></i>
+								<h4 class="text-uppercase m-0">Telefono</h4>
+								<hr class="my-4">
+								<div class="small text-black-50">+34 985 123 456</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 mb-3 mb-md-0">
+						<div class="card py-4 h-100">
+							<div class="card-body text-center">
+								<i class="fas fa-envelope text-primary mb-2"></i>
+								<h4 class="text-uppercase m-0">Email</h4>
+								<hr class="my-4">
+								<div class="small text-black-50">
+									<a href="mailto:contacto@pizzeriastroncone.com">contacto@pizzeriarosa.com</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="small container text-center">
+						<div class="">
+							<p class="m-0 text-center text-black">
+								Copyright &copy; Pizzería Rosa. Realizada por: <a
+									class="m-0 text-center text-black"
+									href="https://www.linkedin.com/in/benjam%C3%ADn-fern%C3%A1ndez-gonz%C3%A1lez-64a6a2147">Benjamín
+									Fernández González</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Bootstrap JS -->
+		<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+	</footer>
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

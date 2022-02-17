@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Spring eCommerce</title>
+
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:include="administrador/template_admin.html::header"></div>
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a th:href="@{/administrador}">Home</a></li>
+			<li class="breadcrumb-item active">Ver Empleados</li>
+		</ol>
+
+		<a class="btn btn-primary" th:href="@{/empleados/create}"> Crear
+			Empleado</a>
+		<h2>Empleados</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellidos</th>
+					<th scope="col">DNI</th>
+					<th scope="col">Cargo</th>
+					<th scope="col">Sueldo</th>
+					<th scope="col">Fecha Incorporación</th>
+					<th scope="col">Acción</th>
+					<th scope="col">Acción</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="empleado:${empleados}">
+					<td th:text="${empleado.nombre}"></td>
+					<td th:text="${empleado.apellido}"></td>
+					<td th:text="${empleado.dni}"></td>
+					<td th:text="${empleado.cargo}"></td>
+					<td th:text="${empleado.salario}"></td>
+					<td
+						th:text="${(#dates.format(empleado.fechaIncorporacion, 'dd-MM-yyyy'))}"></td>
+					<td><a class="btn btn-warning"
+						th:href="@{empleados/edit/{id} (id=${empleado.id}) }">Editar</a></td>
+					<td><a class="btn btn-danger"
+						th:href="@{empleados/delete/{id} (id=${empleado.id}) }"
+						onclick="return confirm('¿Estás seguro que lo quieres eliminar?');">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- /.container -->
+	<div th:include="administrador/template_admin.html::footer"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

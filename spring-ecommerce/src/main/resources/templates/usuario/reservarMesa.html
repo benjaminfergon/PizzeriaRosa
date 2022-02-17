@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Spring eCommerce</title>
+
+<!-- Fuentes  (Google y Fontawesome-->
+<link
+	href="https://fonts.googleapis.com/css?family=Itim|Montserrat&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/d4aec25a22.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:include="usuario/template_usuario.html::header-user"></div>
+
+	<!-- Page Features -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+			<li class="breadcrumb-item active">Reservar Mesa</li>
+		</ol>
+
+		<h2>Reservar Mesa</h2>
+		<form class="form-horizontal" th:action="@{/mesas/save}" method="post"
+			enctype="multipart/form-data">
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="nombre">Cantidad
+					de mesas a reservar:</label>
+				<div class="col-sm-1">
+					<input type="number" class="form-control" id="cantidad"
+						name="cantidad" min="1" max="5" value="1" autocomplete="off"
+						required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="fechaIncorporacion">Fecha
+					Reserva:</label>
+				<div class="col-sm-3">
+					<input type="date" class="form-control" id="fechaReserva"
+						name="fechaReserva" placeholder="Ingrese la fecha de Reserva"
+						autocomplete="off" required>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="horaReserva">Hora
+					Reserva:</label>
+				<div class="col-sm-3">
+					<input type="time" class="form-control" id="horaReserva"
+						name="horaReserva" placeholder="Ingrese la hora de Reserva"
+						autocomplete="off" min="09:00" max="18:00" required>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-2">
+					<button type="submit" class="btn btn-success">
+						<span class="glyphicon glyphicon-saved"></span> Guardar
+					</button>
+				</div>
+			</div>
+
+
+
+		</form>
+
+	</div>
+
+	<!-- Footer -->
+	<div th:include="usuario/template_usuario.html::footer"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>
